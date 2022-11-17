@@ -14,8 +14,11 @@ Menu Program Empat Persegi Panjang
 
 def baca_dimensi() -> None:
     global panjang, lebar
-    panjang = float(input(f"Masukkan Panjang : "))
-    lebar = float(input(f"Masukkan Lebar : "))
+    try:
+        panjang = float(input(f"Masukkan Panjang : "))
+        lebar = float(input(f"Masukkan Lebar : "))
+    except ValueError:
+        pass
 
 def hitung_luas() -> None:
     global hasil
@@ -41,7 +44,7 @@ while pilihan != 4:
     try:
         pilihan = int(input(f"Masukkan pilihan anda : "))
     except ValueError:
-        pilihan = 0
+        pass
 
     if pilihan < 4:
         baca_dimensi()
@@ -57,6 +60,7 @@ while pilihan != 4:
             print("Selesai ... sampai jumpa")
         case _:
             print("Pilihan salah, Ulangi !")
+            break
 
     if pilihan < 4:
         tampil_hasil()
