@@ -8,4 +8,7 @@ for brs in range(baris):
     for kol in range(kolom):
         matriks[brs][kol] = int(input(f"elemen baris = {brs} kolom = {kol}: "))
 
-print(matriks)
+for brs in range(baris):
+    for kol in range(kolom):
+        print(matriks[brs][kol])
+    print()
